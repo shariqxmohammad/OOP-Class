@@ -1,0 +1,30 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Scanner;
+
+
+public class SqrtException {
+
+	public static void main(String[] args) {
+		/* Write an application that throws and catches an ArithmaticException when you attempt to take the square root of a negative value. 
+		Prompt the user for an input value and try the Math.sqrt() method on it. The application either displays the square root or catches
+		The thrown Exception and displays an appropriate message. Save the files as SqrtException.java. */
+	NumberFormat formatted = new DecimalFormat("#0.00");
+	int input; 	
+	Scanner in = new Scanner(System.in);
+	System.out.println("Enter a positive integer");
+	input = in.nextInt();
+	try{
+		if(input>0)
+			System.out.println("The square root of " + input + " is " + (formatted.format(Math.sqrt(input))));
+		else if(input<0)
+			throw(new ArithmeticException());
+			
+	}
+		catch(ArithmeticException e){
+			System.out.println("The integer cannot be negative!");
+		}
+		
+}
+	
+}
